@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Template</title>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <script>
+    $(function() {
+      $("#submit").click(function() {
+        var color = $("#color").val();
+        var age = $('#age').val();
+        
+        $('body').css('background-color', color);
+        
+        var radioValue = $("input[name='food']:checked").val();
+        
+        var story="You are " + age + " years old! Based on your selection, it appears you like "+radioValue+' food.';
+    	$('p').html(story);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  What is your age?<input id='age' type="text" name="user"><br>
+  <br> What is your favorite color? <input id='color' type="text" name="color"><br>
+  <br> What is your favorite food? <br> 
+  Mexican: <input type="radio" name="food" value="Mexican"><br> 
+  Chinese: <input type="radio" name="food" value="Chinese"><br> 
+  American: <input type="radio" name="food" value="American"><br>
+
+  <input type="reset" value="Reset">
+  <button id="submit">Submit</button><br>
+
+  <p></p>
+  
+</body>
+
+</html>
